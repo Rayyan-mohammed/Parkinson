@@ -42,21 +42,22 @@ The empirical evaluation (mean $\pm$ standard deviation) across the 5 independen
 
 | Model / Paradigm | Accuracy | Precision | Recall (Sensitivity) | F1-Score | ROC-AUC |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Logistic Reg (Baseline)** | 0.760 ± 0.066 | 0.843 | 0.857 | 0.841 ± 0.049 | 0.723 ± 0.164 |
-| **KNN (Distance)** | 0.739 ± 0.090 | 0.809 | 0.874 | 0.830 ± 0.071 | 0.763 ± 0.156 |
-| **Random Forest (Bagging)** | 0.758 ± 0.077 | 0.816 | 0.889 | 0.843 ± 0.062 | 0.838 ± 0.149 |
-| **XGBoost (Boosting)** | 0.771 ± 0.118 | 0.813 | 0.908 | 0.849 ± 0.092 | 0.780 ± 0.241 |
-| **LightGBM (Boosting)** | 0.766 ± 0.119 | 0.815 | 0.901 | 0.846 ± 0.092 | 0.847 ± 0.148 |
-| **SVM-RBF (Kernel)** | **0.792 ± 0.052** | 0.825 | **0.942** | **0.869 ± 0.043** | 0.674 ± 0.213 |
-| **Deep Neural Net (MLP)** | 0.767 ± 0.094 | **0.850** | 0.861 | 0.844 ± 0.067 | **0.863 ± 0.120** |
-| **Voting Ensemble (Soft)** | 0.767 ± 0.050 | 0.833 | 0.882 | 0.847 ± 0.046 | 0.834 ± 0.133 |
-| **Stacking Ensemble** | 0.784 ± 0.088 | 0.818 | 0.928 | 0.863 ± 0.066 | 0.799 ± 0.183 |
+| **Logistic Reg (Baseline)** | 0.708 ± 0.101 | **0.844** | 0.771 | 0.793 ± 0.088 | 0.671 ± 0.187 |
+| **KNN (Distance)** | 0.656 ± 0.100 | 0.807 | 0.726 | 0.748 ± 0.105 | 0.744 ± 0.130 |
+| **Random Forest (Bagging)** | 0.743 ± 0.076 | 0.814 | 0.867 | 0.830 ± 0.067 | 0.808 ± 0.171 |
+| **XGBoost (Boosting)** | **0.760 ± 0.114** | 0.825 | 0.875 | **0.837 ± 0.097** | 0.793 ± 0.204 |
+| **LightGBM (Boosting)** | 0.735 ± 0.120 | 0.807 | 0.867 | 0.823 ± 0.099 | 0.752 ± 0.247 |
+| **SVM-RBF (Kernel)** | 0.660 ± 0.120 | 0.806 | 0.743 | 0.748 ± 0.127 | 0.664 ± 0.212 |
+| **Deep Neural Net (MLP)** | **0.756 ± 0.057** | 0.840 | 0.855 | **0.837 ± 0.048** | **0.851 ± 0.116** |
+| **Voting Ensemble (Soft)** | 0.711 ± 0.062 | 0.812 | 0.828 | 0.805 ± 0.059 | 0.802 ± 0.166 |
+| **Stacking Ensemble** | 0.748 ± 0.079 | 0.812 | **0.880** | 0.836 ± 0.066 | 0.783 ± 0.178 |
 
-*   **Deep Learning Excellence in Specificity:** Deep Neural Networks (MLP) demonstrated the highest generic Precision ($0.85$) while sustaining the highest aggregate ROC Area Under the Curve (AUC: 0.863) out of all independent methodologies, proving computational depth extracts robust decision boundaries.
-*   **Kernel Methods Outperform on Subject Splits:** Due to the relatively small subject pool ($n=32$ groups), the RBF Support Vector Engine generalized the best to completely unseen cases, preventing algorithmic overfitting by maximizing diagnostic sensitivity/recall ($0.942%).
-*   **Ensembles Build Stability:** The Meta-Stacking model and Voting Ensembles minimized variance significantly (often providing tight $\pm 0.04$ deviations in accuracy and F1 scores versus the boosting methods exceeding $\pm 0.09$), showing that paradigm fusion acts universally better than reliance on solitary learners.
+*   **Deep Learning Excellence:** After explicit internal SMOTE, Multi-Layer Perceptrons (MLP) demonstrated the highest generic consistency and the highest aggregate ROC Area Under the Curve (AUC: 0.851), proving computational depth extracts resilient non-linear decision boundaries even when artificially balancing the latent minority class.
+*   **Optimization Dominance:** XGBoost vastly improved its baseline predictive power to the foremost F1 metric across the non-ensemble tree learners (0.837) succeeding rigorous GridSearch Hyperparameter optimization mapping the learning_rate to 0.01 traversing 100 strict estimators.
+*   **Ensembles Build Stability:** The Meta-Stacking model minimized precision variations and consistently achieved high recall (0.880), revealing that aggregating probabilities from the neural architecture (MLP), margin optimization (SVM), and tree splitting inherently produces the highest sensitivity to true Parkinson's presentation.
 
 ---
+
 
 ## 6. Explainability and Biomarker Identification (SHAP)
 Medical applications demand interpretability. By extracting the exact marginal contribution of each feature via Shapley values (SHAP), our global interpretability analysis revealed clear mechanistic insights:

@@ -1,0 +1,4 @@
+ID,name,versionNumber,contentType,dataFileSizeBytes,createdBy,createdOn,modifiedBy,modifiedOn,parentId,synapseURL,dataFileMD5Hex,path,error
+syn11051638,mPower_feature1_all.csv,1,text/csv,397713293,3344014,1507302652916,3344014,1507302652916,syn10916109,https://www.synapse.org/#!Synapse:syn11051638.1,df492fb6f0d8dc04b640b102249bf8ad,c:\users\md rayyan\.synapsecache\646\18846646\mpower_feature1_all.csv,
+syn11013303,mPower_feature5_all.csv,1,text/csv,523000871,3344014,1507083170642,3344014,1507083170642,syn10916109,https://www.synapse.org/#!Synapse:syn11013303.1,cc0af7b0a2964e91100cc110baab9dc3,c:\users\md rayyan\.synapsecache\658\18816658\mpower_feature5_all.csv,
+syn11012618,mPower_feature9_all.csv,1,text/csv,309248986,3344014,1507082674051,3344014,1507082674051,syn10916109,https://www.synapse.org/#!Synapse:syn11012618.1,6f63d448ea6d0bf0f9c5c8b2806723ce,c:\users\md rayyan\.synapsecache\791\18815791\mpower_feature9_all.csv,
