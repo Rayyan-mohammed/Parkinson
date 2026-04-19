@@ -16,5 +16,24 @@ __pycache__/
 # data/
 # results/
 
-# mPower Audio Cache
+# mPower Audio Cache & Large Data
+.synapsecache/
 .synapseCache/
+
+# Ignore large downloaded datasets and raw media
+data/mpower_audio/raw_audio/
+data/mpower_audio/extracted_folds/
+data/mpower_audio/features/
+*.wav
+*.m4a
+*.zip
+*.tar.gz
+
+# Ignore heavy output files but keep structure
+# (Uncomment the lines below if you don't want to track generated results)
+# results/paper_figures/*.png
+# results/paper_tables/*.csv
+
+# IDEs
+.vscode/
+.idea/
