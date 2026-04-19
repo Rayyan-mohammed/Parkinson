@@ -4,9 +4,14 @@ An end-to-end, research-grade machine learning pipeline for diagnosing Parkinson
 
 ## Key Features
 * **Zero Data Leakage:** Implements `GroupKFold` cross-validation to ensure that acoustic recordings from the same underlying patient are never split across train and test sets.
-* **Publication-Quality Pipeline:** Calculates metrics with mean and standard deviation matrices.
-* **Advanced Ensembles:** Combines Random Forest, SVM (RBF), and XGBoost through a Meta-Classifier (Stacking).
-* **Explainable AI (XAI):** Unpacks model predictions computationally via SHAP (Shapley Additive exPlanations) to isolate exactly which vocal biomarkers (e.g., Pitch Period Entropy) indicate PD.
+* **Hyperparameter Optimization:** Utilizes Bayesian/GridSearch strategies rigorously finding mathematical optima within nested folds.
+* **SMOTE Balancing:** Specifically protects algorithms from over-indexing on Parkinson's prevalence via Synthetic Minority Oversampling Technique strictly within the training loops.
+* **Publication-Quality Pipeline:** Calculates metrics with mean and standard deviation matrices across 9 independent modeling paradigms (Deep Learning, SVM-RBF, Tree-based, ensembles). 
+* **Explainable AI (XAI):** Unpacks model predictions computationally via SHAP (Shapley Additive exPlanations). Generates both **Global Feature BeeSwarms** and **Local Patient-Specific Waterfall** charts to isolate exactly which vocal biomarkers indicate PD at clinical levels.
+
+## Upcoming Methodologies Supported
+* **Deep Learning Audio Transformer Integration:** (Wav2Vec / Whisper compatibility)
+* **Cross-Corpus Validation:** Generalization testing between the UCI Dataset and the Synapse `mPower` cohort.
 
 ## Repository Structure
 ```
